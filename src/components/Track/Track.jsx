@@ -10,7 +10,7 @@ const Track = ({ title, artist, album }) => {
                 </p>
             </div>
             <div className="w-1/4 p-2 flex justify-center items-center">
-                <button className="rounded-full py-2 px-4 bg-snow text-mauveine font-bold">
+                <button className="rounded-full py-2 px-4 text-snow font-bold hover:bg-white/20">
                     +
                 </button>
             </div>
