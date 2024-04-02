@@ -9,7 +9,7 @@ const SearchResults = () => {
     ];
 
     return (
-        <div className="search-results p-4 h-fit w-full bg-purple-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 shadow-lg">
+        <div className="search-results p-4 h-fit w-full bg-purple-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 shadow-lg">
             {trackList.map((track, index) => (
                 <div key={index}>
                     <Track title={track.title} artist={track.artist} album={track.album} />

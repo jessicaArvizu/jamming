@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Track = ({ title, artist, album }) => {
     return (
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
             <div className="w-3/4 p-2">
                 <p className="font-bold">{title}</p>
                 <p className="font-light ml-2">{artist} -
