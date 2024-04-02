@@ -52,9 +52,10 @@ function App() {
           <Playlist
             playlistName={playlistName}
             playlistTracks={playlistTracks}
-            onNameChange={updatePlaylistName}
+            onNamechange={updatePlaylistName}
             onRemove={removeTrack}
             onSave={savePlaylist}
+            onAdd={addTrack}
           />
         </div>
       </main>

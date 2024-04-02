@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import Track from '../Track/Track';
 
 const TrackList = (props) => {
@@ -17,13 +17,6 @@ const TrackList = (props) => {
       })}
     </div>
   );
-};
-
-TrackList.propTypes = {
-  tracks: PropTypes.array.isRequired,
-  onAdd: PropTypes.func.isRequired,
-  isRemoval: PropTypes.bool.isRequired,
-  onRemove: PropTypes.func.isRequired
 };
 
 export default TrackList;

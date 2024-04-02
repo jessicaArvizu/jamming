@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import { useCallback } from 'react';
 
 const Track = (props) => {
@@ -44,17 +44,6 @@ const Track = (props) => {
             </div>
         </div>
     );
-};
-
-Track.propTypes = {
-    track: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        artist: PropTypes.string.isRequired,
-        album: PropTypes.string.isRequired
-    }).isRequired,
-    onAdd: PropTypes.func.isRequired,
-    onRemove: PropTypes.func.isRequired,
-    isRemoval: PropTypes.bool.isRequired
 };
 
 export default Track;

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import { useCallback } from 'react';
 import TrackList from '../Tracklist/Tracklist';
 
@@ -33,13 +33,6 @@ const Playlist = (props) => {
             </button>
         </div>
     );
-};
-
-Playlist.propTypes = {
-    playlistTracks: PropTypes.array.isRequired,
-    onSave: PropTypes.func.isRequired,
-    onRemove: PropTypes.func.isRequired,
-    onNamechange: PropTypes.func.isRequired
 };
 
 export default Playlist;

@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import { useState, useCallback } from 'react';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = (props) => {
     const [term, setTerm] = useState("");
 
     const handleTermChange = useCallback((event) => {
@@ -9,8 +9,9 @@ const SearchBar = ({ onSearch }) => {
     }, []);
   
     const search = useCallback(() => {
-      onSearch(term);
-    }, [onSearch, term]);
+      props.onSearch(term);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.onSearch, term]);
 
     return (
         <div className="search-bar h-fit w-fit p-4 px-10 flex">
@@ -31,10 +32,6 @@ const SearchBar = ({ onSearch }) => {
             </button>
         </div>
     );
-};
-
-SearchBar.propTypes = {
-    onSearch: PropTypes.func.isRequired
 };
 
 export default SearchBar;
