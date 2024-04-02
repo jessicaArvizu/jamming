@@ -22,8 +22,8 @@ const TrackList = (props) => {
 TrackList.propTypes = {
   tracks: PropTypes.array.isRequired,
   onAdd: PropTypes.func.isRequired,
-  //isRemoval: PropTypes.bool.isRequired,
-  //onRemove: PropTypes.func.isRequired
+  isRemoval: PropTypes.bool.isRequired,
+  onRemove: PropTypes.func.isRequired
 };
 
 export default TrackList;

@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
-const Track = ({ track, onAdd, onRemove, isRemoval }) => {
+const Track = (props) => {
     const addTrack = useCallback(() => {
-        onAdd(track);
-    }, [onAdd, track]);
+       props.onAdd(props.track);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.onAdd, props.track, props]);
 
     const removeTrack = useCallback(() => {
-        onRemove(track);
-    }, [onRemove, track]);
+        props.onRemove(props.track);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.onRemove, props.track, props]);
 
     const renderAction = () => {
-        if (isRemoval) {
+        if (props.isRemoval) {
             return (
                 <button
                     className="rounded-full py-2 px-4 text-snow font-bold hover:bg-white/20"
@@ -32,9 +34,9 @@ const Track = ({ track, onAdd, onRemove, isRemoval }) => {
     return (
         <div className="flex justify-between ">
             <div className="w-3/4 p-2">
-                <p className="font-bold">{track.name}</p>
-                <p className="font-light ml-2">{track.artist} -
-                    <span className="font-thin"> {track.album}</span>
+                <p className="font-bold">{props.track.name}</p>
+                <p className="font-light ml-2">{props.track.artist} -
+                    <span className="font-thin"> {props.track.album}</span>
                 </p>
             </div>
             <div className="w-1/4 p-2 flex justify-center items-center">
