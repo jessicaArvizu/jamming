@@ -1,10 +1,29 @@
-const Tracklist = () => {
-    return (
-        <div>
-            <h1>Tracklist component</h1>
-            <p>Here all the tracks (Track Component) will show.</p>
-        </div>
-    )
-}
+import PropTypes from 'prop-types';
+import Track from '../Track/Track';
 
-export default Tracklist;
+const TrackList = (props) => {
+  return (
+    <div className="TrackList">
+      {props.tracks.map((track) => {
+        return (
+          <Track
+            track={track}
+            key={track.id}
+            onAdd={props.onAdd}
+            isRemoval={props.isRemoval}
+            onRemove={props.onRemove}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+TrackList.propTypes = {
+  tracks: PropTypes.array.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  //isRemoval: PropTypes.bool.isRequired,
+  //onRemove: PropTypes.func.isRequired
+};
+
+export default TrackList;

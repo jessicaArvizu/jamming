@@ -1,23 +1,19 @@
-import Track from "../Track/Track";
+import PropTypes from 'prop-types';
+import TrackList from "../Tracklist/Tracklist";
 
-const SearchResults = () => {
-    const trackList = [
-        { title: 'Birds', artist: 'Imagine Dragons', album: 'Evolve' },
-        { title: 'Hopeless Opus', artist: 'Image Dragons', album: 'Smoke + Mirrors' },
-        { title: 'Demons', artist: 'Imagine Dragons', album: 'Night Visions' },
-        { title: 'Thief', artist: 'Image Dragons', album: 'Smoke + Mirrors' },
-    ];
+const SearchResults = ({searchResults, onAdd}) => {
 
     return (
         <div className="search-results p-4 h-fit w-full bg-purple-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 shadow-lg">
-            {trackList.map((track, index) => (
-                <div key={index}>
-                    <Track title={track.title} artist={track.artist} album={track.album} />
-                    {index !== trackList.length - 1 && <hr className="my-2 border-snow" />}
-                </div>
-            ))}
+            <TrackList tracks={searchResults} onAdd={onAdd}/>
         </div>
     )
 }
+
+SearchResults.propTypes = {
+    searchResults: PropTypes.array.isRequired,
+    onAdd: PropTypes.func.isRequired,
+  };
+  
 
 export default SearchResults;
